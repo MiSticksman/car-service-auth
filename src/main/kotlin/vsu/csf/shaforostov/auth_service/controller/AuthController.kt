@@ -17,7 +17,7 @@ class AuthController {
         @RequestBody dto: AuthRequestDto
     ): ResponseEntity<Any> {
         val auth = request.getHeader(HttpHeaders.AUTHORIZATION)
-        if (auth == null) return ResponseEntity.badRequest().build()
+            ?: return ResponseEntity.badRequest().build()
 
         TODO()
 
